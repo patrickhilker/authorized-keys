@@ -9,6 +9,7 @@ on:
      - master
   schedule:
     - cron: '0 7 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,9 +18,9 @@ jobs:
     strategy:
       matrix:
         php:
-          - 7.2
           - 7.3
           - 7.4
+          - "8.0"
 
     steps:
       - uses: actions/checkout@v2
